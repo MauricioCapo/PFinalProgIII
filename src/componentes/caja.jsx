@@ -27,7 +27,96 @@ function Caja(){
                 </div>
         </header>
         <body className='BodyA'>
-            
+        <main className="games">
+      <h2>
+        <center>
+          Todos los <span>Juegos</span>
+        </center>
+      </h2>
+      <div className="productos">
+        <div className="producto1">
+          <img src={require("../imagenes/CyberPunk2077.jpg")} alt="" />
+          <div className="producto-txt">
+            <h3>CyberPunk 2077</h3>
+            <div className="precio">
+              <p> <strong>Puntos:</strong> 1000</p>
+              <a href="#" className="enlace">comprar</a>
+            </div>
+          </div>
+        </div>
+        <div className="producto1">
+          <img src={require("../imagenes/assasin.jpg")} alt="" />
+          <div className="producto-txt">
+            <h3>Assasin Creed</h3>
+            <div className="precio">
+                <p><strong>Puntos:</strong> 1000</p>
+              <a href="#" className="enlace">comprar</a>
+            </div>
+          </div>
+        </div>
+        <div className="producto1">
+          <img src={require("../imagenes/GK.jpg")} alt="" />
+          <div className="producto-txt">
+            <h3>Gotham Knight</h3>
+            <div className="precio">
+            <p><strong>Puntos:</strong> 1000</p>
+              <a href="#" className="enlace">comprar</a>
+            </div>
+          </div>
+        </div>
+        <div className="producto1">
+          <img src={require("../imagenes/God.jpg")} alt="" />
+          <div className="producto-txt">
+            <h3>God of War</h3>
+            <div className="precio">
+            <p><strong>Puntos:</strong> 1000</p>
+              <a href="#" className="enlace">comprar</a>
+            </div>
+          </div>
+        </div>
+        <div className="producto1">
+          <img src={require("../imagenes/gta.jpg")} alt="" />
+          <div className="producto-txt">
+            <h3>Grand Thief Auto VI</h3>
+            <div className="precio">
+            <p><strong>Puntos:</strong> 1000</p>
+              <a href="#" className="enlace">comprar</a>
+            </div>
+          </div>
+        </div>
+        <div className="producto1">
+          <img src={require("../imagenes/MK1.jpg")} alt="" />
+          <div className="producto-txt">
+            <h3>Mortal Kombat 1</h3>
+            <div className="precio">
+            <p><strong>Puntos:</strong> 1000</p>
+              <a href="#" className="enlace">comprar</a>
+            </div>
+          </div>
+        </div>
+        <div className="producto1">
+          <img src={require("../imagenes/Multiversus.jpg")} alt="" />
+          <div className="producto-txt">
+            <h3>Multiversus</h3>
+            <div className="precio">
+            <p><strong>Puntos:</strong> 1000</p>
+              <a href="#" className="enlace">comprar</a>
+            </div>
+          </div>
+        </div>
+        <div className="producto1">
+          <img src={require("../imagenes/Poppy.jpg")} alt="" />
+          <div className="producto-txt">
+            <h3>Poppy Play Time</h3>
+            <div className="precio">
+            <p><strong>Puntos:</strong> 1000</p>
+              <a href="#" className="enlace">comprar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  
         </body>
         <footer>
         <div className="footeeer">
@@ -52,7 +141,8 @@ function Caja(){
                 </div>
             </div>  
             <div className="box2">
-                <small>&copy 2023 <b>###</b> - Todos los derechos Reservados</small>
+            <small>© 2023 <b>###</b> - Todos los derechos Reservados</small>
+
             </div>
         </footer>
         </>
