@@ -1,46 +1,77 @@
+
 body{
     margin: auto;
     text-decoration: none;
     font-family: 'Open Sans', sans-serif;
     background-image: url(C:\Users\Mauricio\Desktop\ProyectoFinalPIII\mi-proyecto\src\imagenes\Fondo\Fondo.jpg);
 }
-.Titulo,  h1{
-    font-size: 40px;
-    color: white;  
+.header{
+    background-color: #8d1212;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 5px 10%;
+    font-family: "Georgia"
+}
+.header .logo {
+   cursor: pointer;
+   padding-top: 10px;
+  }
+.header .logo img{
+  height: 70px;
+  width: auto;
+  transition: all 0.3s;
+}
+.header .logo img:hover{
+   transform: scale(1.2);
+}
+  .header .links li {
+    display: inline-block;
+    padding: 0 20px;
+    padding-top: 20px;
+}
+  .header .links a {
+    font-size: 20px;
+    color: azure;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+  .header .links li:hover {
+   transform: scale(1.2);
+}
+  .header .links li a:hover {
+    color: #000000;
 }
 .contenedor-Head{
-    display: inline-block;
     max-width: 100%;
-    
 }
-nav{
-    justify-content: space-around;  
-    
+.header .btn{
+    padding-top: 20px;
 }
-ul{
-    list-style-type: none; 
-    text-decoration: none;
-    display: inline-block;
+.header .btn button{
+    font-size: 20px;
+    font-weight: 700;
+    color: #232325;
+    padding: 15px 25px;
+    background: #ffffff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+}
+.header .btn button:hover{
+    background-color: #ce1616;
+    color: beige;
+    transform: scale(1.2);
 }
 li{
-    display: inline-block;
     padding: 10px;
-    
-}
-.puntos{
-    display: inline-block;
-    color: white;
-    text-align: end;
 }
 a{
-    color: rgb(163, 35, 35);
+    color: rgb(5, 5, 5);
     text-decoration: none;
-}
-
-
-.Carrusel img{
-    max-width: 400px;
-    padding-left: 30px;
 }
 .footer{
     position: relative;
@@ -49,25 +80,17 @@ a{
     color: white;
    background-color: white;
 }
-/* .footeer {
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-} */
-
 .box {
     padding-top: 20px;
+    padding-bottom: 15px;
     text-align: center;
-    margin-bottom: 20px; 
 }
 
 .box figure img {
     width: 250px;
     max-width: 100%;
 }
+
 
 .box h2 {
     color: #efefef;
@@ -80,39 +103,25 @@ a{
     margin-bottom: 10px;
 }
 
-.redes {
-    margin-top: 5px;
+.icon{
+    padding-right: 50px;
 }
-
-.redes a { 
-    color: #fff;
-    font-size: 24px;
-    margin-right: 10px;
-    width: 45px;
-    height: 45px;
-    line-height: 45px;
-    background-color: #cdd6df;
-  
-
+.icon:hover{
+    transform: scale(1.2);
 }
-/* .redes a:hover{
-    color: rgb(0, 110, 255);
-} */
 .box2 {
     background-color: #8d1212;
-    padding: 20px 10px;
+    padding: 30px 10px;
     text-align: center;
     color: white;
 }
 .productos{
-    
     display: grid;
     grid-template-columns: repeat(3,1fr);
-   gap: 30px;
-   justify-items: center ;
-   padding-top: 20px;
-   padding-bottom: 60px;
-
+    gap: 30px;
+    justify-items: center ;
+    padding-top: 5px;
+    padding-bottom: 60px;
 }
 .productos img{
    width: 500px;
@@ -149,12 +158,12 @@ h2 span{
   
 }
 .precio p {
-   font-size: 17px;
+   font-size: 20px;
    color: #ce1616;
-   
 }
 .producto1 {
    background-color: #232325;
+   border-radius: 10px;
 }
 .producto-txt{
    padding: 20px;
@@ -163,4 +172,7 @@ h3{
    font-size: 20px;
    color: #ffffff;
    margin-bottom: 5px;
+}
+.footeeer{
+    background-color: #000000;
 }
