@@ -31,13 +31,13 @@ body{
     padding: 0 20px;
     padding-top: 20px;
 }
-  .header .links a {
+.header .links a {
     font-size: 20px;
     color: azure;
     text-decoration: none;
     transition: all 0.3s;
 }
-  .header .links li:hover {
+.header .links li:hover {
    transform: scale(1.2);
 }
   .header .links li a:hover {

@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react'
 import caja from '../estilos/caja.css'
 
-
 function Caja(){
     return(
         <>
@@ -14,7 +13,7 @@ function Caja(){
                       <ul>
                           <li><a href="#"> EXAMPLE</a></li>
                           <li><a href="#">EXAMPLE</a></li>
-                          <li><a href="#">EXAMPLE</a></li>
+                          <li><a href="#">Consulta</a></li>
                       </ul>
                     </nav>
                     <a href="#" className='btn'><button>Usuario</button></a>
