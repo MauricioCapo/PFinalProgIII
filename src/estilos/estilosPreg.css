@@ -10,12 +10,8 @@
 	padding: 0;
 }
 
-body {
-	background: #060707;
-	font-family: 'Roboto', sans-serif;
-}
 
-main {
+.Pas {
 	max-width: 1000px;
 	width: 90%;
 	margin: 40px auto;
@@ -127,10 +123,10 @@ main {
 
 .respuesta {
 	color: #f8f8f8;
-	line-height: 30px;
+	line-height: 35px;
 	max-height: 0;
-	opacity: 0;
-	transition: .3s ease all;
+	overflow: hidden;
+	transition: max-height 0.3s ease;
 }
 
 .contenedor-pregunta.activa .respuesta {

@@ -26,7 +26,7 @@ body{
 .header .logo img:hover{
    transform: scale(1.2);
 }
-  .header .links li {
+.header .links li {
     display: inline-block;
     padding: 0 20px;
     padding-top: 20px;
