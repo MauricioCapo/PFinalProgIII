@@ -3,9 +3,26 @@ import ReactDOM from 'react-dom';
 import caja from '../estilos/caja.css';
 import TarjetasHoras from './tarjetas.jsx'; // Asegúrate de importar tu componente TarjetasHoras
 import Consultas from './consultas.jsx';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 function Caja() {
     const [showGames, setShowGames] = useState(true); // Estado para controlar la visibilidad de los juegos
     const [showCards, setShowCards] = useState(false)
+    const [searchTerm, setSearchTerm] = useState('');
+    const [ImagenActual, setImagenActual] = useState(0);
+  const imagenes = [
+      require('../imagenes/gta.jpg'),
+      require('../imagenes/Multiversus.jpg'),
+      require('../imagenes/GK.jpg')
+  ];
+
+  const siguiente = () => {
+      setImagenActual((anterior) => (anterior + 1) % imagenes.length);
+  };
+
+  const anterior = () => {
+      setImagenActual((anterior) => (anterior - 1 + imagenes.length) % imagenes.length);
+  };
     const handleHoras = () => {
         setShowCards(true)
         setShowGames(false); // Oculta los juegos y muestra las tarjetas de horas
@@ -18,6 +35,18 @@ function Caja() {
        setShowCards(false)
        setShowGames(false)
     }
+
+    const filteredGames = [
+        { name: "CyberPunk 2077", image: require("../imagenes/CyberPunk2077.jpg"), points: 1000 },
+        { name: "Assasin Creed", image: require("../imagenes/assasin.jpg"), points: 1000 },
+        { name: "Gotham Knight", image: require("../imagenes/GK.jpg"), points: 1000 },
+        { name: "God of War", image: require("../imagenes/God.jpg"), points: 1000 },
+        { name: "Grand Thief Auto VI", image: require("../imagenes/gta.jpg"), points: 1000 },
+        { name: "Mortal Kombat 1", image: require("../imagenes/MK1.jpg"), points: 1000 },
+        { name: "Multiversus", image: require("../imagenes/Multiversus.jpg"), points: 1000 },
+        { name: "Poppy Play Time", image: require("../imagenes/Poppy.jpg"), points: 1000 }
+    ].filter(game => game.name.toLowerCase().includes(searchTerm.toLowerCase()));
+
     return (
         <>
             <header className='header'>
@@ -36,93 +65,44 @@ function Caja() {
             <body className='BodyA'>
                 {showGames ? (
                     <main className="games">
+                        <div className='Carrusel'>
+                    <button className='buttonI' onClick={anterior}>
+                        <FontAwesomeIcon icon={faChevronLeft}/>
+                    </button>
+                    <img src={imagenes[ImagenActual]} alt="carousel"/>
+                    <button className='buttonD' onClick={siguiente}>
+                        <FontAwesomeIcon icon={faChevronRight} />
+                    </button>
+                      </div>
                         <h2>
                             <center>
                                 Todos los <span>Juegos</span>
                             </center>
+                            <form className='search-form'>
+                    <div className='input-field'>
+                        <input 
+                            type="text" 
+                            placeholder="Buscar juegos..." 
+                            value={searchTerm} 
+                            onChange={(e) => setSearchTerm(e.target.value)} 
+                        />
+                    </div>
+                </form>
                         </h2>
                         <div className="productos">
-                            <div className="producto1">
-                                <img src={require("../imagenes/CyberPunk2077.jpg")} alt="" />
-                                <div className="producto-txt">
-                                    <h3>CyberPunk 2077</h3>
-                                    <div className="precio">
-                                        <p><strong>Puntos:</strong> 1000</p>
-                                        <a href="#" className="enlace">comprar</a>
+                        {filteredGames.map((game, index) => (
+                                <div className="producto1" key={index}>
+                                    <img src={game.image} alt="" />
+                                    <div className="producto-txt">
+                                        <h3>{game.name}</h3>
+                                        <div className="precio">
+                                            <p><strong>Puntos:</strong> {game.points}</p>
+                                            <a href="#" className="enlace">comprar</a>
+                                        </div>
                                     </div>
                                 </div>
+                            ))}
                             </div>
-                            <div className="producto1">
-                                <img src={require("../imagenes/assasin.jpg")} alt="" />
-                                <div className="producto-txt">
-                                    <h3>Assasin Creed</h3>
-                                    <div className="precio">
-                                        <p><strong>Puntos:</strong> 1000</p>
-                                        <a href="#" className="enlace">comprar</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="producto1">
-                                <img src={require("../imagenes/GK.jpg")} alt="" />
-                                <div className="producto-txt">
-                                    <h3>Gotham Knight</h3>
-                                    <div className="precio">
-                                        <p><strong>Puntos:</strong> 1000</p>
-                                        <a href="#" className="enlace">comprar</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="producto1">
-                                <img src={require("../imagenes/God.jpg")} alt="" />
-                                <div className="producto-txt">
-                                    <h3>God of War</h3>
-                                    <div className="precio">
-                                        <p><strong>Puntos:</strong> 1000</p>
-                                        <a href="#" className="enlace">comprar</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="producto1">
-                                <img src={require("../imagenes/gta.jpg")} alt="" />
-                                <div className="producto-txt">
-                                    <h3>Grand Thief Auto VI</h3>
-                                    <div className="precio">
-                                        <p><strong>Puntos:</strong> 1000</p>
-                                        <a href="#" className="enlace">comprar</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="producto1">
-                                <img src={require("../imagenes/MK1.jpg")} alt="" />
-                                <div className="producto-txt">
-                                    <h3>Mortal Kombat 1</h3>
-                                    <div className="precio">
-                                        <p><strong>Puntos:</strong> 1000</p>
-                                        <a href="#" className="enlace">comprar</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="producto1">
-                                <img src={require("../imagenes/Multiversus.jpg")} alt="" />
-                                <div className="producto-txt">
-                                    <h3>Multiversus</h3>
-                                    <div className="precio">
-                                        <p><strong>Puntos:</strong> 1000</p>
-                                        <a href="#" className="enlace">comprar</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="producto1">
-                                <img src={require("../imagenes/Poppy.jpg")} alt="" />
-                                <div className="producto-txt">
-                                    <h3>Poppy Play Time</h3>
-                                    <div className="precio">
-                                        <p><strong>Puntos:</strong> 1000</p>
-                                        <a href="#" className="enlace">comprar</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </main>
                 ) : (showCards?
                     <TarjetasHoras />:
